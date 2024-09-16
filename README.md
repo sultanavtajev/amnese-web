@@ -67,6 +67,7 @@ Følg disse trinnene for å slå sammen endringene fra en vilkårlig gren inn i 
 ### Trinn 3: Rens, oppdater avhengigheter og bygg opp prosjektet på nytt (Kjør ved store endringer eller bugs, før du begynner å lete etter feil/debugge)
 
 Kjør følgende kommandoer i terminalen
+
     ```bash
     Remove-Item -Recurse -Force node_modules
     Remove-Item -Force package-lock.json
