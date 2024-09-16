@@ -1,55 +1,72 @@
 Notion lenke: https://www.notion.so/Anamnese-1027c2dfb0eb802fbebed0d875035e3b
 
-# Next.js Template
+### Trinn 1: Oppdater din lokale `main`-gren og deretter din egen gren før du begynner å programmere
 
-## Innhold
-- Tailwind CSS
-- PostCSS
-- Shadcn UI-komponenter
-- Struktur basert på best practice
+Følg disse trinnene
 
-## Komme i gang
+1. **Sjekk ut main-grenen og trekk ned de nyeste endringene:**
 
-Følg disse trinnene for å sette opp prosjektet ditt:
+   ```bash
+   git checkout main
+   git pull origin main
+   ```
 
-1. **Klon dette repoet:**
-    ```sh
-    git clone https://github.com/sultanavtajev/nexttemplate.git nyttprosjekt
-    cd nyttprosjekt
-    ```
+2. **Sjekk ut din egen gren:**
 
-2. **Fjern den gamle remote-referansen:**
-    ```sh
-    git remote remove origin
-    ```
+   ```bash
+   git checkout <din-gren>
+   ```
 
-3. **Fjern eksisterende git-historie:**
-    ```sh
-    Remove-Item -Recurse -Force .git
-    ```
+3. **Oppdater din gren med de nyeste endringene fra main:**
 
-4. **Åpne `package.json` og endre feltet "name" til det appen din skal hete.**
+   ```bash
+   git merge main
+   ```
 
-5. **Åpne `src/app/layout.js` og endre feltene "title" og "description" under metadata til det som er riktig for appen din**
+4. **Start å kode på din egen gren!**
 
-6. **Slett `package-lock.json`:**
-    ```sh
-    Remove-Item -Force package-lock.json
-    ```
+### Trinn 2: Oppdatere `main`-grenen med endringer fra en annen gren
 
-7. **Avslutt VSCode.**
+Følg disse trinnene for å slå sammen endringene fra en vilkårlig gren inn i `main`-grenen:
 
-8. **Endre navnet på prosjektmappen til det du ønsker.**
+1. **Sjekk ut den grenen du vil slå sammen, og push eventuelle endringer til det eksterne repoet:**
 
-9. **Start VSCode på nytt og åpne prosjektmappen.**
+   ```bash
+   git checkout <din-gren>
+   git add .
+   git commit -m "Din commit-melding her"
+   git push origin <din-gren>
+   ```
 
-10. **Installer avhengigheter:**
-    ```sh
-    npm install
-    ```
+2. **Bytt til `main`-grenen:**
 
-11. **(Valgfritt) Rens hele prosjektet:**
-    Kjør følgende kommandoer i terminalen
+   ```bash
+   git checkout main
+   ```
+
+3. **Trekk ned de nyeste endringene fra det eksterne repoet på `main`:**
+
+   ```bash
+   git pull origin main
+   ```
+
+4. **Slå sammen endringene fra din gren inn i `main`:**
+
+   ```bash
+   git merge <din-gren>
+   ```
+
+   Hvis det oppstår sammenslåingskonflikter, må du løse dem manuelt, legge til endringene, og deretter fortsette sammenslåingen.
+
+5. **Push de oppdaterte endringene til `main`-grenen i det eksterne repoet:**
+
+   ```bash
+   git push origin main
+   ```
+
+### Trinn 3: Rens, oppdater avhengigheter og bygg opp prosjektet på nytt (Kjør ved store endringer eller bugs, før du begynner å lete etter feil/debugge)
+
+Kjør følgende kommandoer i terminalen
     ```sh
     Remove-Item -Recurse -Force node_modules
     Remove-Item -Force package-lock.json
@@ -59,57 +76,3 @@ Følg disse trinnene for å sette opp prosjektet ditt:
     npm cache clean --force
     npm run build
     ```
-
-12. **Initialiser et nytt lokalt git-repository:**
-    ```sh
-    git init --initial-branch=main
-    git add .
-    git commit -m "Første commit"
-    ```
-
-13. **Opprett et nytt fjern repo på GitHub:**
-
-    - **Manuelt via GitHub nettsiden:**
-      - Gå til GitHub.
-      - Klikk på "New repository".
-      - Fyll inn nødvendige detaljer og opprett repoet.
-
-    - **Ved bruk av GitHub CLI:**
-      - Åpne PowerShell som administrator og kjør følgende kommando for å installere GitHub CLI via winget:
-        ```sh
-        winget install --id GitHub.cli
-        ```
-      - Verifiser installasjonen:
-        ```sh
-        gh --version
-        ```
-      - Logg inn på GitHub CLI:
-        ```sh
-        gh auth login
-        ```
-      - Opprett et nytt repo:
-        ```sh
-        gh repo create nytt-repo-navn --public --source . --remote
-        ```
-
-14. **Legg til fjernrepo (remote repository):**
-    Hvis du opprettet repoet via GitHub nettsiden, må du legge til fjernrepoet manuelt. Kopier URL-en til det nyopprettede repoet fra GitHub og kjør følgende kommando:
-    ```sh
-    git remote add origin https://github.com/brukernavn/nytt-repo-navn.git
-    ```
-
-15. **Push til remote-repo:**
-    ```sh
-    git push -u origin main
-    ```
-
-16. **Start utviklingsserveren:**
-    Etter å ha installert avhengigheter og initialisert ditt git-repository, kan du starte utviklingsserveren.
-    ```sh
-    npm run dev
-    ```
-
-17. **Åpne localhost:**
-    Åpne nettleseren din og naviger til [http://localhost:3000](http://localhost:3000) for å se appen din.
-
-Nå kan du begynne å utvikle din Next.js-applikasjon!
