@@ -1,3 +1,5 @@
+Notion lenke: https://www.notion.so/Anamnese-1027c2dfb0eb802fbebed0d875035e3b
+
 # Next.js Template
 
 ## Innhold
