@@ -68,12 +68,12 @@ Følg disse trinnene for å slå sammen endringene fra en vilkårlig gren inn i 
 
 Kjør følgende kommandoer i terminalen
 
-    ```bash
-    Remove-Item -Recurse -Force node_modules
-    Remove-Item -Force package-lock.json
-    npm install -g npm-check-updates
-    ncu -u
-    npm install
-    npm cache clean --force
-    npm run build
-    ```
+   ```bash
+   Remove-Item -Recurse -Force node_modules
+   Remove-Item -Force package-lock.json
+   npm install -g npm-check-updates
+   ncu -u
+   npm install
+   npm cache clean --force
+   npm run build
+   ```
